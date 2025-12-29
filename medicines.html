@@ -89,7 +89,7 @@ function getSimpleUsage(medicineName) {
     };
   }
 
-  if (name.includes("cetirizine")  name.includes("levocetirizine")) {
+  if (name.includes("cetirizine") || name.includes("levocetirizine")) {
     return {
       timing: "Once daily at night",
       explanation:
@@ -98,8 +98,8 @@ function getSimpleUsage(medicineName) {
   }
 
   if (
-    name.includes("amoxicillin") 
-    name.includes("azithromycin") 
+    name.includes("amoxicillin") ||
+    name.includes("azithromycin") ||
     name.includes("antibiotic")
   ) {
     return {
@@ -145,11 +145,12 @@ async function searchMedicine() {
     const simple = getSimpleUsage(name);
 
     result.innerHTML = `
-      <h3>${med.openfda?.generic_name?.[0]  name}</h3>
+      <h3>${med.openfda?.generic_name?.[0] || name}</h3>
 
       <p><strong>Use:</strong> ${use}</p>
 
       <p><strong>Dosage:</strong> ${dosage}</p>
+
       <p><strong>⏰ Timing:</strong> ${simple.timing}</p>
 
       <p><strong>Side Effects:</strong> ${sideEffects}</p>
