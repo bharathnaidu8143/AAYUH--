@@ -1,9 +1,9 @@
 {
   "name": "AAYUH! - Your Health Companion",
   "short_name": "AAYUH",
-  "start_url": "./",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#00796b",
   "theme_color": "#00796b",
   "orientation": "portrait",
   "description": "AAYUH helps you manage medicines, check symptoms, find hospitals, and maintain your medical history.",
